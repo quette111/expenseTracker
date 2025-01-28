@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <img
+      src="DivPhoto.png"
+      height="300px"
+      style="z-index:-1; position:absolute; opacity: 0.5;"
+    />
+
+    <h1 id="title" style="text-align:center;">Budget Tracker System</h1>
+    <div id="box">
+      <div id="leftBox">
+        <div class="flip-card" id="card">
+          <div class="flip-card-inner">
+            <div id="currentBalance">
+              <h2>Current Balance</h2>
+              <button id="flipButton" style="font-size:9.5px;">
+                <em>Deposit»</em>
+              </button>
+
+              <input id="balanceInput" type="text" disabled />
+            </div>
+            <div class="flip-card-back">
+              <h1>Add Money</h1>
+              <div class="wrapper">
+                <input id="balanceInput2" type="number" />
+                <button onclick="addMoney()" id="buttonAdd">+</button>
+              </div>
+              <button id="flipButtonBack">return</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="addExpense">
+          <h2>Add Expense</h2>
+          <h4 style="position:absolute;bottom:60%;">Item/Service Name</h4>
+          <input
+            id="expenseNameInput"
+            type="text"
+            placeholder="enter expense name"
+          />
+          <h4 style="position:absolute;bottom:30%;">Amount</h4>
+          <input id="expenseAmountInput" type="number" placeholder="$" />
+          <button onclick="sendInfo()" id="sendExpense">Add</button>
+        </div>
+      </div>
+
+      <div id="rightBox">
+        <h1>Expense History:</h1>
+        <div id="outputAreas">
+          <h3 style="padding-left:5px;">Expense Name:</h3>
+          <h3>Amount:</h3>
+          <h3 style="padding-right:50px;">Action:</h3>
+        </div>
+        <div
+          style="overflow-y: auto;
+        max-height: 475px;"
+          id="outerDiv"
+        ></div>
+      </div>
+    </div>
+
+    <script src="file.js"></script>
+  </body>
+</html>
